@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'ngx-multiple-dates/prebuilt-themes/indigo-pink.css';
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&display=swap');
+// html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-image: linear-gradient(to right, #e65c00 , #F9D423);}
+
+
+
+
+.snackbar {
+  button {
+    background: #f08920 !important;
+    color: white !important;
+  }
+}
+.bg-snackbar {
+  --mdc-snackbar-container-color: #0B7FA3 !important;
+  --mdc-snackbar-supporting-text-color: white !important;
+  --mat-mdc-snack-bar-button-color: white !important;
+  white-space: pre-wrap;
+}
+
+
+.error-snackbar {
+  button {
+    background: #0B7FA3 !important;
+    color: white !important;
+  }
+}
+.error-bg-snackbar {
+  --mdc-snackbar-container-color: #dd1b16 !important;
+  --mdc-snackbar-supporting-text-color: white !important;
+  --mat-mdc-snack-bar-button-color: white !important;
+  white-space: pre-wrap;
+}

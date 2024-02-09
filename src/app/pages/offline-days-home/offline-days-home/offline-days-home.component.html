@@ -1,0 +1,53 @@
+<section class="container vh-100 pt-5">
+    <h2 class="fs-1 fw-bold text-center mb-5">Disable Home Days</h2>
+      <div class="row">
+        <div class="col-lg-6 col-md-12 col-sm-12 d-flex flex-column justify-content-between align-items-center">
+       <div class="w-100 text-center">
+        <mat-form-field class="full-width w-100 mb-3">
+          <mat-label>Determine days not available</mat-label>
+          <ngx-multiple-dates [matDatepicker]="picker" placeholder="Excluded Dates" name="excludedDates" (dateChange)="getDate($event)" [autofocus]="'true'" [value]="DateValue"></ngx-multiple-dates>
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matPrefix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <button mat-raised-button class="mb-4 btn" type="button" (click)="sendDate()" style="align-self: flex-end;">Save</button>
+        <div class="col-lg-12 col-md-12 col-sm-12 cont rounded-5 p-3 mb-lg-0 mb-md-4 mb-sm-4 mb-4">
+          <h2 class="text-center">Off days</h2>
+          <div class="row">
+            <div class="col-3 mb-5" *ngFor="let item of DATES; let index = index">
+              <p class="fw-bold text-center">{{item}}</p>
+              <button type="button" mat-raised-button color="primary" (click)="deleteDate(index)">Delete</button>
+            </div>
+          </div>
+          <button type="button" mat-raised-button color="primary" class="mt-5 DA-Button" (click)="deleteDates()">Delete All</button>
+        </div>
+       </div>
+       <div class="DB-Button w-100">
+        <div class="mb-5 d-flex justify-content-center align-items-center">
+          <button type="button" mat-raised-button color="primary" class="mb-sm-3" (click)="logOut()">Logout</button>
+         </div>
+       </div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12 text-center">
+          <mat-form-field class="full-width w-100 mb-3 mt-lg-0 mt-md-5 mt-sm-5 mt-5">
+            <mat-label>Enter time range not available</mat-label>
+            <mat-date-range-input [rangePicker]="pickerRange">
+              <input matStartDate placeholder="Starting Date" (dateChange)="getDateRangeStart($event)" [(ngModel)]="StartDateValue">
+              <input matEndDate placeholder="Ending Date" (dateChange)="getDateRangeEnd($event)"  [(ngModel)]="EndDateValue">
+            </mat-date-range-input>
+            <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="pickerRange"></mat-datepicker-toggle>
+            <mat-date-range-picker #pickerRange></mat-date-range-picker>
+          </mat-form-field>
+          <button mat-raised-button type="button" class="mb-4 btn" (click)="sendDateRange()">Save</button>
+          <div class="cont rounded-5 mb-4">
+            <mat-calendar #pickerRange [(selected)]="CalenderDate"></mat-calendar>
+          </div>
+        </div>
+      </div>
+      <div class="DN-Button w-100">
+        <div class="d-flex justify-content-center align-items-center">
+          <button mat-raised-button color="primary" type="button" class="mt-lg-0 mt-md-5 mt-sm-5 mt-5" (click)="logOut()">Logout</button>
+        </div>
+      </div>
+</section>

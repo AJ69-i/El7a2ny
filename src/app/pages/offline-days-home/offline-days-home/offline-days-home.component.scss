@@ -1,0 +1,111 @@
+.container {
+  h2 {
+    & {
+      text: {
+        decoration: underline;
+      };
+      font: {
+        family: 'Oswald', sans-serif;
+      };
+    }
+  }
+
+  .row {
+    .col-lg-6 {
+      .btn {
+        & {
+          width: 75%;
+
+          background: {
+            image: linear-gradient(to right, #f5af19, #f12711);
+          };
+
+          font: {
+            family: 'Times New Roman', Times, serif;
+          };
+        }
+      }
+
+      .example-chip-list {
+        width: 100%;
+      }
+
+      .example-form {
+        min-width: 150px;
+        max-width: 500px;
+        width: 100%;
+      }
+
+      .example-full-width {
+        width: 100%;
+      }
+
+      .cont {
+        background-color: #f7f7f7;
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+      }
+    }
+
+    .DA-Button {
+      & {
+        width: 50%;
+      }
+    }
+
+    .DB-Button {
+      & {
+        display: block;
+      }
+
+      button {
+        width: 50%;
+      }
+    }
+  }
+
+  .DN-Button {
+    & {
+      display: none;
+    }
+
+    bottom {
+      width: 50%;
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .container {
+    .row {
+      .btn {
+        width: 100%;
+      }
+
+      .DB-Button {
+        & {
+          display: none;
+        }
+
+        button {
+          width: 100%;
+        }
+      }
+    }
+
+    .DN-Button {
+      & {
+        display: block;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+
+    button {
+      & {
+        width: 100%;
+      }
+    }
+  }
+}

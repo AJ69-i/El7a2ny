@@ -1,0 +1,47 @@
+<div class="container-fluid vh-100 d-flex justify-content-center align-items-center">
+<div class="container rounded-5">
+  <div class="row p-lg-5 p-md-3 p-sm-3 p-3">
+    <section class="col-lg-6 col-md-12 col-sm-12 d-flex flex-column justify-content-center align-items-center mb-lg-0 mb-md-4 mb-sm-4 mb-4">
+      <h1 class="fs-1">Login</h1>
+      <form class="example-form" [formGroup]="loginForm" class="w-100 d-flex flex-column justify-content-center align-items-center" (ngSubmit)="login(loginForm)">
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput formControlName="email" placeholder="Enter your email">
+          <mat-error *ngIf="loginForm.get('email')?.hasError('email') && !loginForm.get('email')?.hasError('required')">
+            Please enter valid email
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput formControlName="password" placeholder="Enter the password" [type]="hide ? 'password' : 'text'">
+          <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+            Password is <strong>required</strong>
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('password')?.getError('minlength')">
+            Actual length is : {{loginForm.get('password')?.getError('minlength')['actualLength']}} <br/>
+            Required length is : {{loginForm.get('password')?.getError('minlength')['requiredLength']}}
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('password')?.getError('maxlength')">
+            Actual length is : {{loginForm.get('password')?.getError('maxlength')['actualLength']}} <br/>
+            Required length is : {{loginForm.get('password')?.getError('maxlength')['requiredLength']}}
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('password')?.hasError('password') || !loginForm.get('password')?.hasError('required')">
+            Please enter a correct password
+          </mat-error>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" class="mb-3 mt-5">Login</button>
+        <button mat-raised-button color="primary" type="submit" (click)="GoToForgetPassword()">Forgot password ?</button>
+      </form>
+     </section>
+     <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-center align-items-center">
+      <img lazyLoad="https://aj69-i.github.io/El7a2ny/assets/img/logo.webp" defaultImage="https://aj69-i.github.io/El7a2ny/assets/img/logo.webp" loading="lazy" decoding="async" alt="El7a2ny logo" class="w-100">
+    </div>
+  </div>
+</div>
+</div>
